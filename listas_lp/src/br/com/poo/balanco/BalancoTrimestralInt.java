@@ -14,7 +14,7 @@ public class BalancoTrimestralInt {
 	
 	public int soma() {
 //		System.out.printf("O balanço trimestral é de R$ %d\n", somaTotal);
-		logger.log(Level.INFO, "O balanço trimestral é de R$ ");
+		logger.log(Level.INFO, "O balanço trimestral é de R$ " + somaTotal);
 		return somaTotal;
 	}
 	

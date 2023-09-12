@@ -1,25 +1,36 @@
 package br.com.poo.sb.contas;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+
+import br.com.poo.util.Util;
+
 public class Conta {
 
-	private int numero;
-	private String titular;
-	private double saldo;
+	private String tipoConta;
+	private String numConta;
+	private String cpf;
+	private Double saldo;
 
+	public static Map<String, Conta> mapaContas = new HashMap<>();
+	
 	public Conta() {
 	}
 
-	public Conta(int numero, String titular, double saldo) {
-		this.numero = numero;
-		this.titular = titular;
+	public Conta(String tipoConta, String numConta, String cpf, Double saldo) {
+		this.tipoConta = tipoConta;
+		this.numConta = numConta;
+		this.cpf = cpf;
 		this.saldo = saldo;
 	}
 
-	public boolean sacar(double valor) {
+	public boolean sacar(Double valor) {
 		if (this.saldo < valor) {
 			return false;
 		} else if(valor <= 0.0) {
-			System.out.println("Valor inválido!");
+			Util.customizer();
+			Util.setupLogger().log(Level.INFO, () -> "Valor inválido!");
 			return false;
 		} else {
 			this.saldo -= valor;
@@ -27,21 +38,25 @@ public class Conta {
 		}
 	}
 
-	public int getNumero() {
-		return numero;
+	public String getNumConta() {
+		return numConta;
 	}
 
-	public String getTitular() {
-		return titular;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public double getSaldo() {
+	public Double getSaldo() {
 		return saldo;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Conta [numero=" + numero + ", titular=" + titular + ", saldo=" + saldo + "]";
-//	}
+	public String getTipoConta() {
+		return tipoConta;
+	}
+
+	@Override
+	public String toString() {
+		return "Conta [numConta=" + numConta + ", cpf=" + cpf + ", saldo=" + saldo + "]\n";
+	}
 
 }

@@ -1,4 +1,4 @@
-package br.com.poo.balanco;
+package br.com.poo.util;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
@@ -44,7 +44,7 @@ public class Util {
 	// Remove todos os Handlers extras do Logger
 	public static void customizer() {
 		if(logger.getHandlers().length > 1) {
-			for(Handler log : logger.getHandlers()) {
+			for(Handler log : logger.getHandlers()) {//iteracao
 				logger.removeHandler(log);
 				if(logger.getHandlers().length == 1) {
 					break;

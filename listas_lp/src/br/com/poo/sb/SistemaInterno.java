@@ -18,17 +18,20 @@ public class SistemaInterno {
 		
 		DecimalFormat df = new DecimalFormat("#0,000.00");
 		Conta c1 = new Conta("Corrente", "123456-7", "132.456.789-11", 10000.20);
+		System.out.println("Antes " + c1.getSaldo());
+		LeituraEscrita.comprovanteSaque(c1, 50.00);
+		System.out.println("Depois " + c1.getSaldo());
 		
 		//Conta c2 = new ContaCorrente();
 		//ContaCorrente c3 = new ContaCorrente();
-		Funcionario f1 = new Gerente();
-		
-		c1.getCpf();
-		c1.getSaldo();
-
-		Util.customizer();
-		Util.setupLogger().log(Level.INFO, () -> "Titular: " + c1.getCpf() + " Saldo: " + df.format(c1.getSaldo())
-				+ " Número: " + c1.getNumConta());
+//		Funcionario f1 = new Gerente();
+//		
+//		c1.getCpf();
+//		c1.getSaldo();
+//
+//		Util.customizer();
+//		Util.setupLogger().log(Level.INFO, () -> "Titular: " + c1.getCpf() + " Saldo: " + df.format(c1.getSaldo())
+//				+ " Número: " + c1.getNumConta());
 	}
 
 }

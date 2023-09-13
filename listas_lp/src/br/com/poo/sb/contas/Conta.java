@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
+import javax.naming.ldap.HasControls;
+
 import br.com.poo.util.Util;
 
 public class Conta {
